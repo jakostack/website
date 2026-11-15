@@ -46,13 +46,14 @@
       "category": "Transportation",
       "collaborator": "SIMMER",
       "status": "Completed",
-      "specs": "Dimensions\nMaterial\nYear",
-      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "specs": "Material - Aluminium, EPP, Rubber\nYear - 2022/2023",
+      "description": "Ecoride is a Swedish electric bicycle company founded in 2008 with a mission to make quality e-bikes accessible and affordable. As they’ve expanded across Europe, the demand for more distinctive and versatile models has grown. They approached us to design their newest two-wheeled cargo bike; envisioned as a true alternative to the car for urban families across Europe.\n\nOur concept focused on safety and comfort, featuring an intuitive safety bar for them to hold onto, an easy-access step for climbing in, and integrated reflectors positioned similarly to those on a car. All this whilst maintaining the familiar handling and feel of a traditional bicycle.",
       "images": [
         "/images/loader421-1.svg",
         "/images/loader421-2.svg",
         "/images/loader421-3.svg"
-      ]
+      ],
+      "credit": "Robert During Jansson / SIMMER"
     },
     {
       "title": "Laff Machine – 1",
