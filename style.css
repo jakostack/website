@@ -143,6 +143,12 @@ figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
 .entry .year { color: var(--muted); font-variant-numeric: tabular-nums; }
 .entry .note { color: var(--muted); margin-top: 2px; max-width: 48ch; }
 .empty { color: var(--muted); }
+.shuffle {
+  position: fixed; top: 0; right: 0; z-index: 10;
+  padding: var(--gap);
+  color: var(--muted);
+}
+@media (hover: hover) { .shuffle:hover { color: var(--ink); } }
 
 /* ---------- Smaller screens ---------- */
 @media (max-width: 1100px) {

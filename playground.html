@@ -11,6 +11,7 @@
 <script src="/site.js?v=8"></script>
 </head>
 <body>
+<button class="shuffle" id="shuffle" type="button" hidden>Shuffle</button>
 <main>
   <section class="playground" id="playground" aria-label="Playground"></section>
 </main>
@@ -27,6 +28,19 @@ loadSite('playground', d => {
       ${(it.title || it.year) ? `<div class="caption"><h2 style="font:inherit">${esc(it.title)}</h2><span class="year">${esc(it.year)}</span></div>` : ''}
       ${it.note ? `<p class="note">${esc(it.note)}</p>` : ''}
     </article>`).join('');
+
+  // Shuffle: puts the entries in a new random order on each click
+  const btn = document.getElementById('shuffle');
+  btn.hidden = items.length < 2;
+  btn.addEventListener('click', e => {
+    if (e.detail > 0) btn.blur();
+    const entries = [...el.children];
+    for (let i = entries.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [entries[i], entries[j]] = [entries[j], entries[i]];
+    }
+    el.append(...entries);
+  });
 });
 </script>
 </body>
