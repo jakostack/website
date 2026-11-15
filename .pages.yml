@@ -52,3 +52,35 @@ content:
           - name: credit
             label: Photo credit (optional)
             type: string
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - name: text
+            label: About text
+            type: rich-text
+          - name: portrait
+            label: Portrait
+            type: image
+          - name: portrait_credit
+            label: Portrait photo credit (optional)
+            type: string
+          - name: lists
+            label: Lists (e.g. Clients, Exhibitions, Selected press)
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Heading
+                type: string
+              - name: items
+                label: Items
+                type: object
+                list: true
+                fields:
+                  - name: name
+                    label: Name
+                    type: string
+                  - name: link
+                    label: Link (optional)
+                    type: string
