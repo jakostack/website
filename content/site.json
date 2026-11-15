@@ -1,6 +1,6 @@
 {
   "name": "Jacob Kouthoofd Martensson",
-  "bio": "Jacob Kouthoofd Mårtensson is an industrial designer exploring how small, creative solutions can spark meaningful impact. With a background in Art Direction and a Master’s in Product Design from ECAL, this intersection allows him to craft iconic silhouettes, iterate quickly, communicate ideas clearly, and embrace the creative freedom to abandon what doesn’t work. \n\nHe has contributed to projects with studios such as Form Us With Love, Pentagram London, and SIMMER, for clients including Volvo, H&M, IKEA, and Disney. ",
+  "bio": "Jacob Kouthoofd Martensson is an industrial designer based in Stockholm, exploring how small, creative solutions can spark meaningful impact. His work spans furniture, products, material development and art direction.",
   "email": "jacob@kouthoofdmartensson.com",
   "instagram": "https://www.instagram.com/jacobkouthoofdmartensson/",
   "projects": [
@@ -15,7 +15,8 @@
         "/images/hug-1.svg",
         "/images/hug-2.svg",
         "/images/hug-3.svg"
-      ]
+      ],
+      "credit": ""
     },
     {
       "title": "JK2 Synthesizer",
@@ -28,11 +29,13 @@
         "/images/jk2-1.svg",
         "/images/jk2-2.svg",
         "/images/jk2-3.svg"
-      ]
+      ],
+      "credit": ""
     },
     {
       "title": "Lasso",
       "category": "Material development",
+      "collaborator": "",
       "status": "Researching",
       "specs": "Dimensions\nMaterial\nYear",
       "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
@@ -40,7 +43,8 @@
         "/images/lasso-1.svg",
         "/images/lasso-2.svg",
         "/images/lasso-3.svg"
-      ]
+      ],
+      "credit": ""
     },
     {
       "title": "Loader 421",
@@ -53,7 +57,8 @@
         "/images/loader421-1.svg",
         "/images/loader421-2.svg",
         "/images/loader421-3.svg"
-      ]
+      ],
+      "credit": ""
     },
     {
       "title": "Laff Machine – 1",
@@ -66,11 +71,13 @@
         "/images/lm1-1.svg",
         "/images/lm1-2.svg",
         "/images/lm1-3.svg"
-      ]
+      ],
+      "credit": ""
     },
     {
       "title": "Tornet",
       "category": "Art direction",
+      "collaborator": "",
       "status": "In production",
       "specs": "Dimensions\nMaterial\nYear",
       "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
@@ -78,7 +85,70 @@
         "/images/tornet-1.svg",
         "/images/tornet-2.svg",
         "/images/tornet-3.svg"
-      ]
+      ],
+      "credit": ""
     }
-  ]
+  ],
+  "about": {
+    "text": "<p>Jacob Kouthoofd Mårtensson is an industrial designer exploring how small, creative solutions can spark meaningful impact. With a background in Art Direction and a Master’s in Product Design from <a href=\"https://ecal.ch\">ECAL</a>, this intersection allows him to craft iconic silhouettes, iterate quickly, communicate ideas clearly, and embrace the creative freedom to abandon what doesn’t work.</p><p>He has contributed to projects with studios such as Form Us With Love, Pentagram London, and SIMMER, for clients including Volvo, H&amp;M, IKEA, and Disney.</p>",
+    "portrait": "/images/portrait.svg",
+    "portrait_credit": "",
+    "lists": [
+      {
+        "label": "Clients",
+        "items": [
+          {
+            "name": "Karimoku New Standard",
+            "link": ""
+          },
+          {
+            "name": "Snif Notewrks",
+            "link": ""
+          },
+          {
+            "name": "Viessmann",
+            "link": ""
+          },
+          {
+            "name": "Luovi Productions",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "label": "Exhibitions",
+        "items": [
+          {
+            "name": "Designed in CH, Made in JP, Milano 2025",
+            "link": ""
+          },
+          {
+            "name": "Swiss Pavilion, Osaka 2025",
+            "link": ""
+          },
+          {
+            "name": "Helsinki Design Week 2025",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "label": "Selected press",
+        "items": [
+          {
+            "name": "Disegno",
+            "link": ""
+          },
+          {
+            "name": "Dezeen",
+            "link": ""
+          },
+          {
+            "name": "Architectural Digest",
+            "link": ""
+          }
+        ]
+      }
+    ]
+  }
 }
