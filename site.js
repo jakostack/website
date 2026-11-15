@@ -34,6 +34,9 @@ function buildMenu(d, current) {
       </div>
     </div>`;
   document.body.prepend(menu);
+  const bar = document.createElement('div');
+  bar.className = 'topbar';
+  document.body.prepend(bar);
 
   // Touch screens and keyboards: tap or press to open, tap outside / Escape / a link to close.
   const btn = menu.querySelector('.menu-toggle');

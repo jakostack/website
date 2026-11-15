@@ -20,14 +20,19 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 1px soli
 img { display: block; width: 100%; height: auto; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
+/* ---------- White bar across the top; photos scroll underneath it ---------- */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9;
+  height: calc(var(--gap) * 2 + 19px);
+  background: var(--paper);
+}
+
 /* ---------- Menu: hidden until you hover the name ---------- */
 .menu { position: fixed; top: 0; left: 0; z-index: 10; }
 .menu-toggle {
   position: relative; z-index: 2;
   display: flex; gap: 10px; align-items: baseline;
-  margin: calc(var(--gap) - 6px);
-  padding: 6px;
-  background: var(--paper);
+  padding: var(--gap);
   text-align: left;
 }
 .menu-toggle .hint { color: var(--muted); }
