@@ -71,10 +71,11 @@
     },
     {
       "title": "Tornet",
-      "category": "Art direction",
-      "status": "In production",
-      "specs": "Dimensions\nMaterial\nYear",
-      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "category": "Product",
+      "collaborator": "Viessmann",
+      "status": "Finished",
+      "specs": "Material - Steel Mesh\nYear - 2023",
+      "description": "Tornet was designed as the heatpump of the future. ",
       "images": [
         "/images/tornet-1.svg",
         "/images/tornet-2.svg",
