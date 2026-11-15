@@ -8,14 +8,13 @@
       "category": "Furniture",
       "collaborator": "Xiyao Min",
       "status": "Finished",
-      "specs": "Dimensions\nMaterial\nYear",
-      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "specs": "Material - Oak\nYear - 2025",
+      "description": "From 13 April to 13 October 2025, representatives from countries across the globe gathered to showcase innovation, culture, and sustainability at the World Expo in Osaka, Japan. For Switzerland’s pavilion, MA Product Design students at ECAL were tasked with designing a stackable wooden chair to be produced in Japan by Karimoku New Standard, intended to furnish the light-weight, bubble-inspired architecture by Manuel Herz.\n\nHUG is a circular chair that stacks inversely a feature that not only informs its name but also visually embodies the essence of collaboration. This versatile design accommodates a range of uses, from conferences to general pavilion seating.",
       "images": [
         "/images/hug-1.svg",
         "/images/hug-2.svg",
         "/images/hug-3.svg"
-      ],
-      "credit": ""
+      ]
     },
     {
       "title": "JK2 Synthesizer",
@@ -28,13 +27,11 @@
         "/images/jk2-1.svg",
         "/images/jk2-2.svg",
         "/images/jk2-3.svg"
-      ],
-      "credit": ""
+      ]
     },
     {
       "title": "Lasso",
       "category": "Material development",
-      "collaborator": "",
       "status": "Researching",
       "specs": "Dimensions\nMaterial\nYear",
       "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
@@ -42,8 +39,7 @@
         "/images/lasso-1.svg",
         "/images/lasso-2.svg",
         "/images/lasso-3.svg"
-      ],
-      "credit": ""
+      ]
     },
     {
       "title": "Loader 421",
@@ -56,8 +52,7 @@
         "/images/loader421-1.svg",
         "/images/loader421-2.svg",
         "/images/loader421-3.svg"
-      ],
-      "credit": ""
+      ]
     },
     {
       "title": "Laff Machine – 1",
@@ -70,13 +65,11 @@
         "/images/lm1-1.svg",
         "/images/lm1-2.svg",
         "/images/lm1-3.svg"
-      ],
-      "credit": ""
+      ]
     },
     {
       "title": "Tornet",
       "category": "Art direction",
-      "collaborator": "",
       "status": "In production",
       "specs": "Dimensions\nMaterial\nYear",
       "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
@@ -84,33 +77,27 @@
         "/images/tornet-1.svg",
         "/images/tornet-2.svg",
         "/images/tornet-3.svg"
-      ],
-      "credit": ""
+      ]
     }
   ],
   "about": {
     "text": "Jacob Kouthoofd Mårtensson is an industrial designer exploring how small, creative solutions can spark meaningful impact. With a background in Art Direction and a Master’s in Product Design from [ECAL](https://ecal.ch), this intersection allows him to craft iconic silhouettes, iterate quickly, communicate ideas clearly, and embrace the creative freedom to abandon what doesn’t work.\n\nHe has contributed to projects with studios such as Form Us With Love, Pentagram London, and SIMMER, for clients including Volvo, H&M, IKEA, and Disney.",
     "portrait": "/images/portrait.svg",
-    "portrait_credit": "",
     "lists": [
       {
         "label": "Clients",
         "items": [
           {
-            "name": "Karimoku New Standard",
-            "link": ""
+            "name": "Karimoku New Standard"
           },
           {
-            "name": "Snif Notewrks",
-            "link": ""
+            "name": "Snif Notewrks"
           },
           {
-            "name": "Viessmann",
-            "link": ""
+            "name": "Viessmann"
           },
           {
-            "name": "Luovi Productions",
-            "link": ""
+            "name": "Luovi Productions"
           }
         ]
       },
@@ -118,16 +105,13 @@
         "label": "Exhibitions",
         "items": [
           {
-            "name": "Designed in CH, Made in JP, Milano 2025",
-            "link": ""
+            "name": "Designed in CH, Made in JP, Milano 2025"
           },
           {
-            "name": "Swiss Pavilion, Osaka 2025",
-            "link": ""
+            "name": "Swiss Pavilion, Osaka 2025"
           },
           {
-            "name": "Helsinki Design Week 2025",
-            "link": ""
+            "name": "Helsinki Design Week 2025"
           }
         ]
       },
@@ -135,16 +119,13 @@
         "label": "Selected press",
         "items": [
           {
-            "name": "Disegno",
-            "link": ""
+            "name": "Disegno"
           },
           {
-            "name": "Dezeen",
-            "link": ""
+            "name": "Dezeen"
           },
           {
-            "name": "Architectural Digest",
-            "link": ""
+            "name": "Architectural Digest"
           }
         ]
       }
