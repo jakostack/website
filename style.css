@@ -70,13 +70,13 @@ main { padding: 64px var(--gap) 120px; }
 .project { padding-bottom: 140px; }
 .head {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr) auto;
+  grid-template-columns: 28px minmax(0, 1fr);
   gap: 0 12px;
   margin-bottom: 14px;
 }
 .head h2 { font-size: inherit; font-weight: 400; }
 .head .n { color: var(--muted); font-variant-numeric: tabular-nums; }
-.head .meta { color: var(--muted); }
+.info .meta { grid-column: 1 / -1; color: var(--muted); margin-bottom: 10px; }
 details { grid-column: 2 / -1; }
 summary {
   cursor: pointer; list-style: none; display: inline-block;
@@ -130,9 +130,8 @@ figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
   main { padding: 56px 16px 80px; }
   .project { padding-bottom: 80px; }
   .info { grid-template-columns: 1fr; gap: 8px; }
+  .info .meta { margin-bottom: 0; }
   .media { grid-template-columns: 1fr; gap: 12px; }
-  .head { grid-template-columns: 28px 1fr; }
-  .head .meta { grid-column: 2; }
   .about { grid-template-columns: 1fr; gap: 24px; }
   .portrait { order: -1; max-width: 340px; }
   .lists dl { grid-template-columns: 1fr; gap: 2px; }

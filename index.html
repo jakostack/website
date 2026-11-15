@@ -26,8 +26,10 @@ loadSite('projects', d => {
       <header class="head">
         <span class="n">${pad(i + 1)}</span>
         <h2>${esc(p.title)}</h2>
-        <span class="meta">${meta}</span>
-        ${(p.description || p.specs) ? `<details><summary>Info</summary><div class="info"><p class="specs">${specs}</p><p>${esc(p.description)}</p></div></details>` : ''}
+        ${(meta || p.description || p.specs) ? `<details><summary>Info</summary><div class="info">
+          ${meta ? `<p class="meta">${meta}</p>` : ''}
+          <p class="specs">${specs}</p><p>${esc(p.description)}</p>
+        </div></details>` : ''}
       </header>
       <div class="media">${imgs}</div>
     </article>`;
