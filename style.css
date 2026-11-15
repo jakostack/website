@@ -77,9 +77,9 @@ main { padding: 64px var(--gap) 120px; }
 .project { padding-bottom: 140px; }
 .head {
   display: grid;
-  /* number | title + Info | details | description */
-  grid-template-columns: 28px minmax(0, 3fr) minmax(0, 3fr) minmax(0, 6fr);
-  gap: 0 var(--gap);
+  /* number | title + Info | details | description (always starts at the middle of the page) */
+  grid-template-columns: 28px 200px minmax(0, 1fr) 50%;
+  gap: 0;
   margin-bottom: 14px;
 }
 .head h1, .head h2 { font-size: inherit; font-weight: 400; }
@@ -89,6 +89,7 @@ main { padding: 64px var(--gap) 120px; }
 .info-toggle:hover { color: var(--ink); }
 .info-toggle::after { content: " +"; }
 .info-toggle[aria-expanded="true"]::after { content: " –"; }
+.title, .details { padding-right: var(--gap); }
 .details { color: var(--muted); }
 .details p + p { margin-top: 0.6em; }
 .text p { max-width: 60ch; }
