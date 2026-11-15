@@ -146,7 +146,8 @@
         "label": "Selected press",
         "items": [
           {
-            "name": "Disegno"
+            "name": "Disegno",
+            "link": "https://disegnojournal.com/newsfeed/happy-by-design"
           },
           {
             "name": "Dezeen",
