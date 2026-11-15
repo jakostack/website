@@ -56,17 +56,18 @@
       "credit": "Robert During Jansson / SIMMER"
     },
     {
-      "title": "Laff Machine – 1",
+      "title": "Laff Machine 1",
       "category": "Experimental",
-      "collaborator": "Self-initiated",
+      "collaborator": "Helsinki Design Week 2025",
       "status": "Exhibited",
-      "specs": "Dimensions\nMaterial\nYear",
-      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "specs": "Material - Aluminium\nYear - 2025",
+      "description": "Inspired by the original 1950s Laff Box by Charles Douglass, the LM-1 is a sample-based synthesizer capable to layering 60 different laughter samples. Up to six voices can be played simultaneously, allowing users to build complex textures of laughter - using everything from subtle chuckles to the sound of a large, laughing audience. \n\nThe LM-1 was first exhibited as a commissioned piece for the 'Happiness, Can it be designed?' exhibition curated by Anniina Koivu for the Helsinki Design Week 2025. ",
       "images": [
         "/images/lm1-1.svg",
         "/images/lm1-2.svg",
         "/images/lm1-3.svg"
-      ]
+      ],
+      "credit": "Justus Hirvi "
     },
     {
       "title": "Tornet",
