@@ -24,7 +24,7 @@ function buildMenu(d, current) {
           ${link('/about.html', 'About', 'about')}
         </ul>
         <ol class="index">${(d.projects || []).map((p, i) =>
-          `<li><span class="n">${pad(i + 1)}</span><a href="/#${slug(p.title)}">${esc(p.title)}</a></li>`).join('')}</ol>
+          `<li><span class="n">${pad(i + 1)}</span><a href="/project.html?p=${slug(p.title)}" data-slug="${slug(p.title)}"${current === 'project:' + slug(p.title) ? ' aria-current="page"' : ''}>${esc(p.title)}</a></li>`).join('')}</ol>
       </div>
       <div class="contact">
         <p class="label">Freelance &amp; inquiries</p>

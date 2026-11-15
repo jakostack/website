@@ -20,25 +20,26 @@ loadSite('projects', d => {
   document.getElementById('top').innerHTML = projects.map((p, i) => {
     const meta = [p.category + (p.collaborator ? ', with ' + p.collaborator : ''), p.status].filter(Boolean).map(esc).join(' · ');
     const specs = esc(p.specs || '').replace(/\n/g, '<br>');
-    const imgs = (p.images || []).map((src, j) =>
-      `<figure${j === 0 ? ' class="wide"' : ''}><img src="${esc(src)}" alt="${esc(p.title)}" loading="${i === 0 && j === 0 ? 'eager' : 'lazy'}">${j === 0 && p.credit ? `<figcaption>© ${esc(p.credit)}</figcaption>` : ''}</figure>`).join('');
+    const url = `/project.html?p=${slug(p.title)}`;
+    const first = (p.images || [])[0];
+    const hero = first ? `<a class="hero" href="${url}" aria-label="Open ${esc(p.title)}"><img src="${esc(first)}" alt="${esc(p.title)}" loading="${i === 0 ? 'eager' : 'lazy'}"></a>` : '';
     return `<article class="project" id="${slug(p.title)}">
       <header class="head">
         <span class="n">${pad(i + 1)}</span>
-        <h2>${esc(p.title)}</h2>
+        <h2><a href="${url}">${esc(p.title)}</a></h2>
         ${(meta || p.description || p.specs) ? `<details><summary>Info</summary><div class="info">
           ${meta ? `<p class="meta">${meta}</p>` : ''}
           <p class="specs">${specs}</p><p>${esc(p.description)}</p>
         </div></details>` : ''}
       </header>
-      <div class="media">${imgs}</div>
+      ${hero}
     </article>`;
   }).join('');
 
   // Grey out the project on screen in the menu's index
   const links = [...document.querySelectorAll('.index a')];
   const obs = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.hash === '#' + e.target.id));
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.dataset.slug === e.target.id));
   }), { rootMargin: '0px 0px -80% 0px' });
   document.querySelectorAll('.project').forEach(p => obs.observe(p));
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();

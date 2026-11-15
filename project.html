@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob Kouthoofd Mårtensson</title>
+<meta name="description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
+<meta property="og:title" content="Jacob Kouthoofd Mårtensson">
+<meta property="og:description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js"></script>
+</head>
+<body>
+<main>
+  <article class="project project-page" id="project"></article>
+  <nav class="project-nav" id="project-nav" aria-label="More projects"></nav>
+</main>
+
+<!-- One page for every project: project.html?p=<project-name>. Content comes from content/site.json. -->
+<script>
+const key = new URLSearchParams(location.search).get('p') || '';
+loadSite('project:' + key, d => {
+  const projects = d.projects || [];
+  const i = projects.findIndex(p => slug(p.title) === key);
+  const el = document.getElementById('project');
+  if (i < 0) { el.innerHTML = '<p class="empty">This project could not be found. <a href="/">See all projects</a></p>'; return; }
+  const p = projects[i];
+  document.title = p.title + ' — ' + d.name;
+  const meta = [p.category + (p.collaborator ? ', with ' + p.collaborator : ''), p.status].filter(Boolean).map(esc).join(' · ');
+  const specs = esc(p.specs || '').replace(/\n/g, '<br>');
+  const imgs = (p.images || []).map((src, j) =>
+    `<figure${j === 0 ? ' class="wide"' : ''}><img src="${esc(src)}" alt="${esc(p.title)}" loading="${j < 2 ? 'eager' : 'lazy'}">${j === 0 && p.credit ? `<figcaption>© ${esc(p.credit)}</figcaption>` : ''}</figure>`).join('');
+  el.innerHTML = `
+    <header class="head">
+      <span class="n">${pad(i + 1)}</span>
+      <h1>${esc(p.title)}</h1>
+      <div class="info">
+        ${meta ? `<p class="meta">${meta}</p>` : ''}
+        <p class="specs">${specs}</p><p>${esc(p.description)}</p>
+      </div>
+    </header>
+    <div class="media">${imgs}</div>`;
+  const prev = projects[(i - 1 + projects.length) % projects.length];
+  const next = projects[(i + 1) % projects.length];
+  document.getElementById('project-nav').innerHTML = projects.length > 1 ? `
+    <a href="/project.html?p=${slug(prev.title)}"><span class="label">Previous</span>${esc(prev.title)}</a>
+    <a href="/">All projects</a>
+    <a href="/project.html?p=${slug(next.title)}"><span class="label">Next</span>${esc(next.title)}</a>` : '<a href="/">All projects</a>';
+});
+</script>
+</body>
+</html>

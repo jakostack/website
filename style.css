@@ -25,7 +25,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .menu-toggle {
   position: relative; z-index: 2;
   display: flex; gap: 10px; align-items: baseline;
-  padding: var(--gap);
+  margin: calc(var(--gap) - 6px);
+  padding: 6px;
+  background: var(--paper);
   text-align: left;
 }
 .menu-toggle .hint { color: var(--muted); }
@@ -74,7 +76,17 @@ main { padding: 64px var(--gap) 120px; }
   gap: 0 12px;
   margin-bottom: 14px;
 }
-.head h2 { font-size: inherit; font-weight: 400; }
+.head h1, .head h2 { font-size: inherit; font-weight: 400; }
+.head h2 a:hover { color: var(--muted); }
+.hero { display: block; }
+.hero img { transition: opacity .2s ease; }
+.hero:hover img { opacity: .92; }
+.project-page .info { grid-column: 2 / -1; padding-top: 6px; }
+.project-page { padding-bottom: 80px; }
+.project-nav { display: flex; justify-content: space-between; gap: 20px; padding-top: 24px; }
+.project-nav .label { display: block; color: var(--muted); }
+.project-nav a:nth-child(2) { align-self: flex-end; }
+.project-nav a:last-child { text-align: right; }
 .head .n { color: var(--muted); font-variant-numeric: tabular-nums; }
 .info .meta { grid-column: 1 / -1; color: var(--muted); margin-bottom: 10px; }
 details { grid-column: 2 / -1; }
@@ -137,4 +149,6 @@ figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
   .lists dl { grid-template-columns: 1fr; gap: 2px; }
   .playground { grid-template-columns: 1fr; gap: 48px; }
   .menu-panel { width: 100%; }
+  .project-page .info { grid-column: 1 / -1; }
+  .project-nav { flex-wrap: wrap; }
 }
