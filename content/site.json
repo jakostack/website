@@ -1,0 +1,92 @@
+{
+  "name": "Jacob Kouthoofd Martensson",
+  "bio": "Jacob Kouthoofd Martensson is an industrial designer based in Stockholm, exploring how small, creative solutions can spark meaningful impact. His work spans furniture, products, material development and art direction.",
+  "email": "jacob@kouthoofdmartensson.com",
+  "instagram": "https://www.instagram.com/jacobkouthoofdmartensson/",
+  "projects": [
+    {
+      "title": "Hug Chair",
+      "category": "Furniture",
+      "collaborator": "Xiyao Min",
+      "status": "Finished",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/hug-1.svg",
+        "/images/hug-2.svg",
+        "/images/hug-3.svg"
+      ],
+      "credit": ""
+    },
+    {
+      "title": "JK2 Synthesizer",
+      "category": "Product",
+      "collaborator": "Jahn Koutrios",
+      "status": "Completed",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/jk2-1.svg",
+        "/images/jk2-2.svg",
+        "/images/jk2-3.svg"
+      ],
+      "credit": ""
+    },
+    {
+      "title": "Lasso",
+      "category": "Material development",
+      "collaborator": "",
+      "status": "Researching",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/lasso-1.svg",
+        "/images/lasso-2.svg",
+        "/images/lasso-3.svg"
+      ],
+      "credit": ""
+    },
+    {
+      "title": "Loader 421",
+      "category": "Transportation",
+      "collaborator": "SIMMER",
+      "status": "Completed",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/loader421-1.svg",
+        "/images/loader421-2.svg",
+        "/images/loader421-3.svg"
+      ],
+      "credit": ""
+    },
+    {
+      "title": "Laff Machine – 1",
+      "category": "Experimental",
+      "collaborator": "Self-initiated",
+      "status": "Exhibited",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/lm1-1.svg",
+        "/images/lm1-2.svg",
+        "/images/lm1-3.svg"
+      ],
+      "credit": ""
+    },
+    {
+      "title": "Tornet",
+      "category": "Art direction",
+      "collaborator": "",
+      "status": "In production",
+      "specs": "Dimensions\nMaterial\nYear",
+      "description": "Write two to four sentences about the project here: what it is, why you made it, and what's interesting about how it was made.",
+      "images": [
+        "/images/tornet-1.svg",
+        "/images/tornet-2.svg",
+        "/images/tornet-3.svg"
+      ],
+      "credit": ""
+    }
+  ]
+}
