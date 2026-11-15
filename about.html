@@ -6,26 +6,12 @@
 <title>About — Jacob Kouthoofd Martensson</title>
 <meta name="description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
 <meta property="og:title" content="About — Jacob Kouthoofd Martensson">
-<meta property="og:description" content="Industrial designer based in Stockholm.">
+<meta property="og:description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
 <link rel="stylesheet" href="/style.css">
+<script src="/site.js"></script>
 </head>
 <body>
-<aside class="side">
-  <div>
-    <h1 class="name"><a href="/" data-name>Jacob Kouthoofd Martensson</a></h1>
-    <ul class="pages"><li><a href="/about.html" aria-current="page">About</a></li></ul>
-    <nav aria-label="Projects"><ol class="index" id="index"></ol></nav>
-    <p class="bio" id="bio"></p>
-  </div>
-  <div class="contact">
-    <p class="label">Freelance &amp; inquiries</p>
-    <p><a id="email" href="#"></a></p>
-    <p><a id="instagram" href="#" target="_blank" rel="noopener">Instagram</a></p>
-    <p class="fine">© <span data-name></span> <span id="year"></span></p>
-  </div>
-</aside>
-
-<main id="top">
+<main>
   <section class="about" aria-label="About">
     <div>
       <div class="about-text" id="about-text"></div>
@@ -35,31 +21,16 @@
   </section>
 </main>
 
-<!-- All text and images come from content/site.json (edit in Pages CMS). -->
 <script>
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const slug = s => String(s).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const pad = n => String(n).padStart(2,'0');
-
-fetch('/content/site.json', {cache:'no-cache'}).then(r => r.json()).then(d => {
-  document.querySelectorAll('[data-name]').forEach(el => el.textContent = d.name);
-  document.getElementById('bio').remove();
-  const em = document.getElementById('email'); em.textContent = d.email; em.href = 'mailto:' + d.email;
-  const ig = document.getElementById('instagram'); if (d.instagram) ig.href = d.instagram; else ig.parentElement.remove();
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('index').innerHTML = (d.projects || []).map((p,i) =>
-    `<li><span class="n">${pad(i+1)}</span><a href="/#${slug(p.title)}">${esc(p.title)}</a></li>`).join('');
-
+loadSite('about', d => {
   const a = d.about || {};
   const t = a.text || '';
   // The editor saves formatted text as HTML; plain text is split into paragraphs on blank lines.
   document.getElementById('about-text').innerHTML = /<[a-z][\s\S]*>/i.test(t)
     ? t : t.split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join('');
-
   document.getElementById('lists').innerHTML = (a.lists || []).map(l => `
     <dl><dt>${esc(l.label)}</dt><div>${(l.items || []).map(it =>
       `<dd>${it.link ? `<a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.name)}</a>` : esc(it.name)}</dd>`).join('')}</div></dl>`).join('');
-
   const fig = document.getElementById('portrait');
   if (a.portrait) fig.innerHTML = `<img src="${esc(a.portrait)}" alt="Portrait of ${esc(d.name)}">${a.portrait_credit ? `<figcaption>© ${esc(a.portrait_credit)}</figcaption>` : ''}`;
   else fig.remove();

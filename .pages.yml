@@ -13,9 +13,6 @@ content:
       - name: name
         label: Your name
         type: string
-      - name: bio
-        label: Bio
-        type: text
       - name: email
         label: Email
         type: string
@@ -84,3 +81,21 @@ content:
                   - name: link
                     label: Link (optional)
                     type: string
+      - name: playground
+        label: Playground (processes and experiments, newest first)
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: year
+            label: Year
+            type: string
+          - name: note
+            label: Short note (optional)
+            type: text
+          - name: images
+            label: Images
+            type: image
+            list: true

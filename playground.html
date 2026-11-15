@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playground — Jacob Kouthoofd Martensson</title>
+<meta name="description" content="Processes, sketches and experiments by Jacob Kouthoofd Martensson.">
+<meta property="og:title" content="Playground — Jacob Kouthoofd Martensson">
+<meta property="og:description" content="Processes, sketches and experiments by Jacob Kouthoofd Martensson.">
+<link rel="stylesheet" href="/style.css">
+<script src="/site.js"></script>
+</head>
+<body>
+<main>
+  <section class="playground" id="playground" aria-label="Playground"></section>
+</main>
+
+<script>
+loadSite('playground', d => {
+  const items = d.playground || [];
+  const el = document.getElementById('playground');
+  if (!items.length) { el.innerHTML = '<p class="empty">Nothing here yet.</p>'; return; }
+  el.innerHTML = items.map(it => `
+    <article class="entry">
+      <div class="shots">${(it.images || []).map(src =>
+        `<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join('')}</div>
+      <div class="caption"><h2 style="font:inherit">${esc(it.title)}</h2><span class="year">${esc(it.year)}</span></div>
+      ${it.note ? `<p class="note">${esc(it.note)}</p>` : ''}
+    </article>`).join('');
+});
+</script>
+</body>
+</html>
