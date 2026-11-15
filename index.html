@@ -26,15 +26,26 @@ loadSite('projects', d => {
     return `<article class="project" id="${slug(p.title)}">
       <header class="head">
         <span class="n">${pad(i + 1)}</span>
-        <h2><a href="${url}">${esc(p.title)}</a></h2>
-        ${(meta || p.description || p.specs) ? `<details><summary>Info</summary><div class="info">
-          ${meta ? `<p class="meta">${meta}</p>` : ''}
-          <p class="specs">${specs}</p><p>${esc(p.description)}</p>
-        </div></details>` : ''}
+        <div class="title">
+          <h2><a href="${url}">${esc(p.title)}</a></h2>
+          ${(meta || p.description || p.specs) ? `<button class="info-toggle" aria-expanded="false" aria-controls="info-${slug(p.title)}">Info</button>` : ''}
+        </div>
+        <div class="details" id="info-${slug(p.title)}">
+          ${meta ? `<p>${meta}</p>` : ''}
+          ${specs ? `<p>${specs}</p>` : ''}
+        </div>
+        <div class="text">${p.description ? `<p>${esc(p.description)}</p>` : ''}</div>
       </header>
       ${hero}
     </article>`;
   }).join('');
+
+  // Info toggle: shows the details and text for that project
+  document.querySelectorAll('.info-toggle').forEach(btn => btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', open);
+    btn.closest('.project').classList.toggle('is-open', open);
+  }));
 
   // Grey out the project on screen in the menu's index
   const links = [...document.querySelectorAll('.index a')];

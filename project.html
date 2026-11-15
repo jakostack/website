@@ -12,7 +12,7 @@
 </head>
 <body>
 <main>
-  <article class="project project-page" id="project"></article>
+  <article class="project project-page is-open" id="project"></article>
   <nav class="project-nav" id="project-nav" aria-label="More projects"></nav>
 </main>
 
@@ -33,11 +33,12 @@ loadSite('project:' + key, d => {
   el.innerHTML = `
     <header class="head">
       <span class="n">${pad(i + 1)}</span>
-      <h1>${esc(p.title)}</h1>
-      <div class="info">
-        ${meta ? `<p class="meta">${meta}</p>` : ''}
-        <p class="specs">${specs}</p><p>${esc(p.description)}</p>
+      <div class="title"><h1>${esc(p.title)}</h1></div>
+      <div class="details">
+        ${meta ? `<p>${meta}</p>` : ''}
+        ${specs ? `<p>${specs}</p>` : ''}
       </div>
+      <div class="text">${p.description ? `<p>${esc(p.description)}</p>` : ''}</div>
     </header>
     <div class="media">${imgs}</div>`;
   const prev = projects[(i - 1 + projects.length) % projects.length];
