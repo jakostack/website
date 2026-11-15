@@ -24,8 +24,16 @@ a { -webkit-tap-highlight-color: transparent; }
 /* ---------- White bar across the top; photos scroll underneath it ---------- */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 9;
-  height: calc(var(--gap) * 2 + 19px);
-  background: var(--paper);
+  height: calc(var(--gap) * 2 + 19px + env(safe-area-inset-top, 0px));
+  background: rgba(255, 255, 255, .94);
+}
+/* Frosted glass where the browser supports it: photos show through, softly blurred */
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .topbar {
+    background: rgba(255, 255, 255, .62);
+    -webkit-backdrop-filter: saturate(160%) blur(18px);
+    backdrop-filter: saturate(160%) blur(18px);
+  }
 }
 
 /* ---------- Menu: hidden until you hover the name ---------- */
@@ -33,7 +41,7 @@ a { -webkit-tap-highlight-color: transparent; }
 .menu-toggle {
   position: relative; z-index: 2;
   display: flex; gap: 10px; align-items: baseline;
-  padding: var(--gap);
+  padding: calc(var(--gap) + env(safe-area-inset-top, 0px)) var(--gap) var(--gap);
   text-align: left;
 }
 .menu-toggle .hint { color: var(--muted); }
@@ -145,7 +153,7 @@ figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
 .empty { color: var(--muted); }
 .shuffle {
   position: fixed; top: 0; right: 0; z-index: 10;
-  padding: var(--gap);
+  padding: calc(var(--gap) + env(safe-area-inset-top, 0px)) var(--gap) var(--gap);
   color: var(--muted);
 }
 @media (hover: hover) { .shuffle:hover { color: var(--ink); } }
