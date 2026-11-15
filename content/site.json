@@ -149,10 +149,12 @@
             "name": "Disegno"
           },
           {
-            "name": "Dezeen"
+            "name": "Dezeen",
+            "link": "https://www.dezeen.com/2025/04/15/ecal-karimoku-hug-chair-swiss-pavilion-expo-2025-osaka/"
           },
           {
-            "name": "Architectural Digest"
+            "name": "Architectural Digest",
+            "link": "https://www.admagazine.fr/article/tendances-milan-design-week-2025"
           }
         ]
       }
