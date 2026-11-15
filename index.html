@@ -7,8 +7,8 @@
 <meta name="description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
 <meta property="og:title" content="Jacob Kouthoofd Martensson">
 <meta property="og:description" content="Jacob Kouthoofd Martensson is an industrial designer exploring how small, creative solutions can spark meaningful impact.">
-<link rel="stylesheet" href="/style.css?v=6">
-<script src="/site.js?v=6"></script>
+<link rel="stylesheet" href="/style.css?v=7">
+<script src="/site.js?v=7"></script>
 </head>
 <body>
 <main id="top"></main>
@@ -41,7 +41,8 @@ loadSite('projects', d => {
   }).join('');
 
   // Info toggle: shows the details and text for that project
-  document.querySelectorAll('.info-toggle').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.info-toggle').forEach(btn => btn.addEventListener('click', e => {
+    if (e.detail > 0) btn.blur(); // mouse or tap: no focus box; keyboard users still get one
     const open = btn.getAttribute('aria-expanded') !== 'true';
     btn.setAttribute('aria-expanded', open);
     btn.closest('.project').classList.toggle('is-open', open);

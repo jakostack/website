@@ -78,8 +78,9 @@ main { padding: 64px var(--gap) 120px; }
 .project { padding-bottom: 140px; }
 .head {
   display: grid;
-  /* number | title + Info | details | description (always starts at the middle of the page) */
-  grid-template-columns: 28px 200px minmax(0, 1fr) 50%;
+  /* number | title + Info, details below | description (always starts at the middle of the page) */
+  grid-template-columns: 28px minmax(0, 1fr) 50%;
+  grid-template-rows: auto 1fr;
   gap: 0;
   margin-bottom: 14px;
 }
@@ -91,7 +92,11 @@ main { padding: 64px var(--gap) 120px; }
 .info-toggle::after { content: " +"; }
 .info-toggle[aria-expanded="true"]::after { content: " –"; }
 .title, .details { padding-right: var(--gap); }
-.details { color: var(--muted); }
+.head .n { grid-row: 1; }
+.title { grid-column: 2; grid-row: 1; }
+/* details sit under Info, level with the last line of the description */
+.details { grid-column: 2; grid-row: 2; align-self: end; padding-top: 16px; color: var(--muted); }
+.text { grid-column: 3; grid-row: 1 / span 2; }
 .details p + p { margin-top: 0.6em; }
 .text p { max-width: 60ch; }
 .project:not(.is-open) .details,
@@ -148,7 +153,8 @@ figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
   main { padding: 56px 16px 80px; }
   .project { padding-bottom: 80px; }
   .head { grid-template-columns: 28px minmax(0, 1fr); }
-  .details, .text { grid-column: 2; margin-top: 12px; }
+  .head { grid-template-rows: none; }
+  .details, .text { grid-column: 2; grid-row: auto; align-self: auto; padding-top: 0; margin-top: 12px; }
   .media { grid-template-columns: 1fr; gap: 12px; }
   .about { grid-template-columns: 1fr; gap: 24px; }
   .portrait { order: -1; max-width: 340px; }
