@@ -1,0 +1,54 @@
+# Settings for the Pages CMS editor (https://pagescms.org)
+media:
+  input: images
+  output: /images
+
+content:
+  - name: site
+    label: Portfolio
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Your name
+        type: string
+      - name: bio
+        label: Bio
+        type: text
+      - name: email
+        label: Email
+        type: string
+      - name: instagram
+        label: Instagram link
+        type: string
+      - name: projects
+        label: Projects (drag to reorder)
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: category
+            label: Category (e.g. Furniture)
+            type: string
+          - name: collaborator
+            label: Client or collaborator (optional)
+            type: string
+          - name: status
+            label: Status (e.g. Finished)
+            type: string
+          - name: specs
+            label: Specs (one per line, e.g. dimensions, material, year)
+            type: text
+          - name: description
+            label: Description
+            type: text
+          - name: images
+            label: Images (first one is shown large)
+            type: image
+            list: true
+          - name: credit
+            label: Photo credit (optional)
+            type: string
