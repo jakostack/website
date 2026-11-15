@@ -131,7 +131,8 @@
         "label": "Exhibitions",
         "items": [
           {
-            "name": "Designed in CH, Made in JP, Milano 2025"
+            "name": "Designed in CH, Made in JP, Milano 2025",
+            "link": "https://ecal.ch/en/feed/projects/8162/designed-in-ch-made-in-jp/"
           },
           {
             "name": "Swiss Pavilion, Osaka 2025"
