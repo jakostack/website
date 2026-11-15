@@ -110,10 +110,12 @@
         "label": "Clients",
         "items": [
           {
-            "name": "Karimoku New Standard"
+            "name": "Karimoku New Standard",
+            "link": "https://www.karimoku-newstandard.jp/news/2025/%E3%80%90hug-chair%E3%80%91ecal%E3%81%A8kns%E3%81%AE%E5%8D%94%E5%83%8D-2025%E5%B9%B4%E5%A4%A7%E9%98%AA%E3%83%BB%E9%96%A2%E8%A5%BF%E4%B8%87%E5%8D%9A%E3%82%B9%E3%82%A4%E3%82%B9%E3%83%91%E3%83%93/"
           },
           {
-            "name": "Snif Notewrks"
+            "name": "Snif Notewrks",
+            "link": "https://snif.co/pages/notewrks"
           },
           {
             "name": "Viessmann"
