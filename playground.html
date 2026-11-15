@@ -7,8 +7,8 @@
 <meta name="description" content="Processes, sketches and experiments by Jacob Kouthoofd Martensson.">
 <meta property="og:title" content="Playground — Jacob Kouthoofd Martensson">
 <meta property="og:description" content="Processes, sketches and experiments by Jacob Kouthoofd Martensson.">
-<link rel="stylesheet" href="/style.css?v=7">
-<script src="/site.js?v=7"></script>
+<link rel="stylesheet" href="/style.css?v=8">
+<script src="/site.js?v=8"></script>
 </head>
 <body>
 <main>
@@ -24,7 +24,7 @@ loadSite('playground', d => {
     <article class="entry">
       <div class="shots">${(it.images || []).map(src =>
         `<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join('')}</div>
-      <div class="caption"><h2 style="font:inherit">${esc(it.title)}</h2><span class="year">${esc(it.year)}</span></div>
+      ${(it.title || it.year) ? `<div class="caption"><h2 style="font:inherit">${esc(it.title)}</h2><span class="year">${esc(it.year)}</span></div>` : ''}
       ${it.note ? `<p class="note">${esc(it.note)}</p>` : ''}
     </article>`).join('');
 });
