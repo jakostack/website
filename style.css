@@ -46,7 +46,8 @@ a { -webkit-tap-highlight-color: transparent; }
   padding: calc(var(--gap) + env(safe-area-inset-top, 0px)) var(--gap) var(--gap);
   text-align: left;
 }
-.menu-toggle .hint { color: var(--muted); }
+.menu-toggle .hint { color: var(--muted); padding: 0; }
+@media (hover: hover) { .menu-toggle .home:hover { color: var(--ink); } }
 .menu-panel {
   position: fixed; top: 0; left: 0; bottom: 0;
   width: var(--panel);

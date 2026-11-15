@@ -13,9 +13,10 @@ function buildMenu(d, current) {
   menu.className = 'menu';
   menu.setAttribute('aria-label', 'Site');
   menu.innerHTML = `
-    <button class="menu-toggle" aria-expanded="false" aria-controls="menu-panel">
-      <span>${esc(d.name)}</span><span class="hint">Menu</span>
-    </button>
+    <div class="menu-toggle">
+      <a class="home" href="/">${esc(d.name)}</a>
+      <button class="hint" type="button" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+    </div>
     <div class="menu-panel" id="menu-panel">
       <div>
         <ul class="pages">
@@ -39,8 +40,8 @@ function buildMenu(d, current) {
   document.body.prepend(bar);
 
   // Touch screens and keyboards: tap or press to open, tap outside / Escape / a link to close.
-  const btn = menu.querySelector('.menu-toggle');
-  const hint = btn.querySelector('.hint');
+  const btn = menu.querySelector('.hint');
+  const hint = btn;
   const set = open => {
     menu.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', open);
