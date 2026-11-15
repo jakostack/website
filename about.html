@@ -25,9 +25,14 @@
 loadSite('about', d => {
   const a = d.about || {};
   const t = a.text || '';
-  // The editor saves formatted text as HTML; plain text is split into paragraphs on blank lines.
-  document.getElementById('about-text').innerHTML = /<[a-z][\s\S]*>/i.test(t)
-    ? t : t.split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join('');
+  // The editor saves formatted text as Markdown: paragraphs, **bold**, *italic* and [links](url).
+  const inline = s => esc(s)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>')
+    .replace(/\n/g, '<br>');
+  document.getElementById('about-text').innerHTML = /^\s*<[a-z]/i.test(t)
+    ? t : t.split(/\n\s*\n/).filter(p => p.trim()).map(p => `<p>${inline(p.trim())}</p>`).join('');
   document.getElementById('lists').innerHTML = (a.lists || []).map(l => `
     <dl><dt>${esc(l.label)}</dt><div>${(l.items || []).map(it =>
       `<dd>${it.link ? `<a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.name)}</a>` : esc(it.name)}</dd>`).join('')}</div></dl>`).join('');
