@@ -85,6 +85,13 @@
         "/images/ZBuMhK3eKut3QsXU6pdzuyKYNj0.avif",
         "/images/ff32e043-425f-498d-a47e-217a24d6b0d2.jpeg"
       ],
+      "videos": [
+        {
+          "file": "/images/laff-machine-1.mp4",
+          "poster": "/images/laff-machine-1-poster.avif",
+          "sound": true
+        }
+      ],
       "credit": "Photo Credit: Justus Hirvi "
     },
     {
@@ -101,6 +108,13 @@
         "/images/final-hero-4.avif",
         "/images/dsc06365.avif",
         "/images/dsc06355.avif"
+      ],
+      "videos": [
+        {
+          "file": "/images/tornet.mp4",
+          "poster": "/images/tornet-poster.avif",
+          "sound": false
+        }
       ]
     }
   ],
