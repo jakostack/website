@@ -123,6 +123,7 @@ main { padding: 64px var(--gap) 120px; }
 .project-nav a:last-child { text-align: right; }
 .media { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
 .media figure.wide { grid-column: 1 / -1; }
+.media video { display: block; width: 100%; height: auto; }
 figcaption { color: var(--muted); font-size: 11px; margin-top: 6px; }
 
 /* ---------- About ---------- */

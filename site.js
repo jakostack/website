@@ -63,5 +63,5 @@ function loadSite(current, render) {
 }
 
 // Block right-click and dragging on images (deters casual "Save image as" / "Open image in new tab")
-document.addEventListener('contextmenu', e => { if (e.target.closest('img, .hero')) e.preventDefault(); });
+document.addEventListener('contextmenu', e => { if (e.target.closest('img, video, .hero')) e.preventDefault(); });
 document.addEventListener('dragstart', e => { if (e.target.closest('img')) e.preventDefault(); });

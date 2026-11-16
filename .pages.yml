@@ -46,6 +46,22 @@ content:
             label: Images (first one is shown large)
             type: image
             list: true
+          - name: videos
+            label: Videos (shown right after the main image)
+            type: object
+            list: true
+            fields:
+              - name: file
+                label: Video file (MP4)
+                type: file
+                options:
+                  extensions: [mp4, webm]
+              - name: poster
+                label: Cover image shown before it plays (optional)
+                type: image
+              - name: sound
+                label: Has sound (shows play controls instead of looping silently)
+                type: boolean
           - name: credit
             label: Photo credit (optional)
             type: string

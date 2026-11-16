@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://kouthoofdmartensson.com/icon-512.png">
 <meta property="og:url" content="https://kouthoofdmartensson.com/">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/style.css?v=12">
-<script src="/site.js?v=12"></script>
+<link rel="stylesheet" href="/style.css?v=13">
+<script src="/site.js?v=13"></script>
 </head>
 <body>
 <main>
@@ -35,8 +35,23 @@ loadSite('project:' + key, d => {
   document.title = p.title + ' — ' + d.name;
   const meta = [p.category + (p.collaborator ? ', with ' + p.collaborator : ''), p.status].filter(Boolean).map(esc).join(' · ');
   const specs = esc(p.specs || '').replace(/\n/g, '<br>');
-  const imgs = (p.images || []).map((src, j) =>
-    `<figure${j === 0 ? ' class="wide"' : ''}><img src="${esc(src)}" alt="${esc(p.title)}" loading="${j < 2 ? 'eager' : 'lazy'}">${j === 0 && p.credit ? `<figcaption>© ${esc(p.credit)}</figcaption>` : ''}</figure>`).join('');
+  // Media order: main image, then any videos, then the remaining images
+  const images = (p.images || []).map(src => ({ type: 'img', src }));
+  const videos = (p.videos || []).filter(v => v && v.file).map(v => ({ type: 'video', ...v }));
+  const media = images.length ? [images[0], ...videos, ...images.slice(1)] : videos;
+  const imgs = media.map((m, j) => {
+    const cls = j === 0 ? ' class="wide"' : '';
+    const credit = j === 0 && p.credit ? `<figcaption>© ${esc(p.credit)}</figcaption>` : '';
+    if (m.type === 'video') {
+      const poster = m.poster ? ` poster="${esc(m.poster)}"` : '';
+      // Videos with sound: play controls, starts when tapped. Silent videos: loop on their own.
+      const attrs = m.sound
+        ? `controls playsinline preload="metadata" controlslist="nodownload"`
+        : `autoplay muted loop playsinline preload="auto" disablepictureinpicture`;
+      return `<figure${cls}><video src="${esc(m.file)}"${poster} ${attrs}></video>${credit}</figure>`;
+    }
+    return `<figure${cls}><img src="${esc(m.src)}" alt="${esc(p.title)}" loading="${j < 2 ? 'eager' : 'lazy'}">${credit}</figure>`;
+  }).join('');
   el.innerHTML = `
     <header class="head">
       <span class="n">${pad(i + 1)}</span>
@@ -48,6 +63,14 @@ loadSite('project:' + key, d => {
       <div class="text">${p.description ? `<p>${esc(p.description)}</p>` : ''}</div>
     </header>
     <div class="media">${imgs}</div>`;
+  // Landscape videos span the full width; portrait ones sit in the two-column grid
+  el.querySelectorAll('video').forEach(v => {
+    const fit = () => { if (v.videoWidth > v.videoHeight) v.closest('figure').classList.add('wide'); };
+    if (v.readyState >= 1) fit(); else v.addEventListener('loadedmetadata', fit, { once: true });
+    // Visitors who prefer reduced motion get a paused video with controls instead of a loop
+    if (v.loop && matchMedia('(prefers-reduced-motion: reduce)').matches) { v.autoplay = false; v.pause(); v.controls = true; }
+    else if (v.loop) { v.muted = true; v.play().catch(() => {}); }
+  });
   const prev = projects[(i - 1 + projects.length) % projects.length];
   const next = projects[(i + 1) % projects.length];
   document.getElementById('project-nav').innerHTML = projects.length > 1 ? `
