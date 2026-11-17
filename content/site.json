@@ -56,7 +56,7 @@
       "videos": [
         {
           "file": "/images/LASSO.mp4",
-          "sound": false
+          "sound": true
         }
       ]
     },
